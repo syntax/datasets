@@ -102,7 +102,7 @@ def compile_project(repo_path, commit_dir):
         compile_java_manually(repo_path, commit_dir)
 
 def compile_java_manually(repo_path, commit_dir):
-    """Compile the entire project and retain only the relevant .class files."""
+    """Compile the entire project and match relevant .class files."""
     src_dir = repo_path / 'src'
     if not src_dir.exists():
         print(f"No source directory found in {repo_path}. Skipping manual compilation.")
@@ -117,28 +117,32 @@ def compile_java_manually(repo_path, commit_dir):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Compiling the entire project into {output_dir}")
-    javac_cmd = ['javac', '-d', str(output_dir)] + [str(f) for f in src_dir.rglob("*.java")]
+    javac_cmd = ['javac', '-d', str(output_dir), '-sourcepath', str(src_dir)] + [str(f) for f in src_dir.rglob("*.java")]
     try:
         subprocess.run(javac_cmd, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error during manual compilation: {e}")
         return
 
+    # match relevant .class files
     target_output_dir = commit_dir / 'compiled'
     target_output_dir.mkdir(parents=True, exist_ok=True)
 
     for java_file in dataset_java_files:
-        relative_path = java_file.relative_to(commit_dir).with_suffix('.class')
-        compiled_file = output_dir / relative_path
-        if compiled_file.exists():
-            target_file = target_output_dir / relative_path
-            target_file.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy(compiled_file, target_file)
-            print(f"Copied {compiled_file} to {target_file}")
+        class_name = java_file.stem
+        matching_class_files = list(output_dir.rglob(f"{class_name}*.class"))  # match all related .class files
+        if matching_class_files:
+            for class_file in matching_class_files:
+                relative_path = class_file.relative_to(output_dir)
+                target_file = target_output_dir / relative_path
+                target_file.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy(class_file, target_file)
+                print(f"Copied {class_file} to {target_file}")
         else:
-            print(f"Compiled file for {relative_path} not found. Skipping.")
+            print(f"Compiled file for {java_file.name} not found. Skipping.")
 
     shutil.rmtree(output_dir, ignore_errors=True)
+
 
 
 
