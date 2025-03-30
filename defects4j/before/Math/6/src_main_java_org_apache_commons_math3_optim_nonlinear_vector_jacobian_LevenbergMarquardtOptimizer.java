@@ -149,7 +149,7 @@ public class LevenbergMarquardtOptimizer
      * for all the tuning parameters (see the {@link
      * #LevenbergMarquardtOptimizer(double,double,double,double,double)
      * other contructor}.
-     * The default values for the algorithm settings are:
+     * The default values for the algorithm strategySettings are:
      * <ul>
      *  <li>Initial step bound factor: 100</li>
      *  <li>Cost relative tolerance: 1e-10</li>
@@ -166,7 +166,7 @@ public class LevenbergMarquardtOptimizer
      * Constructor that allows the specification of a custom convergence
      * checker.
      * Note that all the usual convergence checks will be <em>disabled</em>.
-     * The default values for the algorithm settings are:
+     * The default values for the algorithm strategySettings are:
      * <ul>
      *  <li>Initial step bound factor: 100</li>
      *  <li>Cost relative tolerance: 1e-10</li>
@@ -222,7 +222,7 @@ public class LevenbergMarquardtOptimizer
      * for some of the tuning parameters (see the {@link
      * #LevenbergMarquardtOptimizer(double,double,double,double,double)
      * other contructor}.
-     * The default values for the algorithm settings are:
+     * The default values for the algorithm strategySettings are:
      * <ul>
      *  <li>Initial step bound factor}: 100</li>
      *  <li>QR ranking threshold}: {@link Precision#SAFE_MIN}</li>

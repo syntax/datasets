@@ -240,7 +240,7 @@ public abstract class SerializerProvider
      */
     protected SerializerProvider(SerializerProvider src)
     {
-        // since this is assumed to be a blue-print instance, many settings missing:
+        // since this is assumed to be a blue-print instance, many strategySettings missing:
         _config = null;
         _serializationView = null;
         _serializerFactory = null;
@@ -259,7 +259,7 @@ public abstract class SerializerProvider
     
     /*
     /**********************************************************
-    /* Methods for configuring default settings
+    /* Methods for configuring default strategySettings
     /**********************************************************
      */
 
@@ -1060,7 +1060,7 @@ public abstract class SerializerProvider
 
     /**
      * Method that will handle serialization of Date(-like) values, using
-     * {@link SerializationConfig} settings to determine expected serialization
+     * {@link SerializationConfig} strategySettings to determine expected serialization
      * behavior.
      * Note: date here means "full" date, that is, date AND time, as per
      * Java convention (and not date-only values like in SQL)
@@ -1077,7 +1077,7 @@ public abstract class SerializerProvider
 
     /**
      * Method that will handle serialization of Date(-like) values, using
-     * {@link SerializationConfig} settings to determine expected serialization
+     * {@link SerializationConfig} strategySettings to determine expected serialization
      * behavior.
      * Note: date here means "full" date, that is, date AND time, as per
      * Java convention (and not date-only values like in SQL)
@@ -1146,7 +1146,7 @@ public abstract class SerializerProvider
     }
 
     /**
-     * Helper method called to indicate problem in POJO (serialization) definitions or settings
+     * Helper method called to indicate problem in POJO (serialization) definitions or strategySettings
      * regarding specific Java type, unrelated to actual JSON content to map.
      * Default behavior is to construct and throw a {@link JsonMappingException}.
      *
@@ -1164,7 +1164,7 @@ public abstract class SerializerProvider
     }
 
     /**
-     * Helper method called to indicate problem in POJO (serialization) definitions or settings
+     * Helper method called to indicate problem in POJO (serialization) definitions or strategySettings
      * regarding specific property (of a type), unrelated to actual JSON content to map.
      * Default behavior is to construct and throw a {@link JsonMappingException}.
      *

@@ -36,7 +36,7 @@ import org.apache.commons.lang3.SystemUtils;
  * There is no need to instantiate a new style each time. A program
  * will generally use one of the predefined constants on this class.
  * Alternatively, the {@link StandardToStringStyle} class can be used
- * to set the individual settings. Thus most styles can be achieved
+ * to set the individual strategySettings. Thus most styles can be achieved
  * without subclassing.</p>
  *
  * <p>If required, a subclass can override as many or as few of the

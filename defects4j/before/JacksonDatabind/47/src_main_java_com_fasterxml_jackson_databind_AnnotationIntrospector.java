@@ -332,7 +332,7 @@ public abstract class AnnotationIntrospector
      * relevant annotations (not including ones checked with a call to
      * {@link #findSubtypes}
      * 
-     * @param config Configuration settings in effect (for serialization or deserialization)
+     * @param config Configuration strategySettings in effect (for serialization or deserialization)
      * @param ac Annotated class to check for annotations
      * @param baseType Base java type of value for which resolver is to be found
      * 
@@ -351,7 +351,7 @@ public abstract class AnnotationIntrospector
      * relevant annotations (not including ones checked with a call to
      * {@link #findSubtypes}
      * 
-     * @param config Configuration settings in effect (for serialization or deserialization)
+     * @param config Configuration strategySettings in effect (for serialization or deserialization)
      * @param am Annotated member (field or method) to check for annotations
      * @param baseType Base java type of property for which resolver is to be found
      * 
@@ -373,7 +373,7 @@ public abstract class AnnotationIntrospector
      * relevant annotations (not including ones checked with a call to
      * {@link #findSubtypes}
      * 
-     * @param config Configuration settings in effect (for serialization or deserialization)
+     * @param config Configuration strategySettings in effect (for serialization or deserialization)
      * @param am Annotated member (field or method) to check for annotations
      * @param containerType Type of property for which resolver is to be found (must be a container type)
      * 
@@ -629,7 +629,7 @@ public abstract class AnnotationIntrospector
 
     /**
      * Method for accessing declared typing mode annotated (if any).
-     * This is used for type detection, unless more granular settings
+     * This is used for type detection, unless more granular strategySettings
      * (such as actual exact type; or serializer to use which means
      * no type information is needed) take precedence.
      *

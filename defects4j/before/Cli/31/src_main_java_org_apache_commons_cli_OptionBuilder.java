@@ -306,7 +306,7 @@ public final class OptionBuilder
     }
 
     /**
-     * Create an Option using the current settings and with
+     * Create an Option using the current strategySettings and with
      * the specified Option <code>char</code>.
      *
      * @param opt the character representation of the Option
@@ -320,7 +320,7 @@ public final class OptionBuilder
     }
 
     /**
-     * Create an Option using the current settings
+     * Create an Option using the current strategySettings
      *
      * @return the Option instance
      * @throws IllegalArgumentException if <code>longOpt</code> has not been set.
@@ -337,7 +337,7 @@ public final class OptionBuilder
     }
 
     /**
-     * Create an Option using the current settings and with
+     * Create an Option using the current strategySettings and with
      * the specified Option <code>char</code>.
      *
      * @param opt the <code>java.lang.String</code> representation

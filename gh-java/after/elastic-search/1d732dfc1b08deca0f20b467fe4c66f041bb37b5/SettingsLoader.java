@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Provides the ability to load settings (in the form of a simple Map) from
+ * Provides the ability to load strategySettings (in the form of a simple Map) from
  * the actual source content that represents them.
  *
  * @author kimchy (Shay Banon)
@@ -31,7 +31,7 @@ import java.util.Map;
 public interface SettingsLoader {
 
     /**
-     * Loads (parses) the settings from a source string.
+     * Loads (parses) the strategySettings from a source string.
      */
     Map<String, String> load(String source) throws IOException;
 }

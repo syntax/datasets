@@ -526,7 +526,7 @@ public abstract class Node implements Cloneable {
         new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);
     }
 
-    // if this node has no document (or parent), retrieve the default output settings
+    // if this node has no document (or parent), retrieve the default output strategySettings
     private Document.OutputSettings getOutputSettings() {
         return ownerDocument() != null ? ownerDocument().outputSettings() : (new Document("")).outputSettings();
     }

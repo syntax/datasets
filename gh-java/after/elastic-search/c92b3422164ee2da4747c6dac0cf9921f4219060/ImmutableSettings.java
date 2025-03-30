@@ -276,15 +276,15 @@ public class ImmutableSettings implements Settings {
     }
 
     /**
-     * Returns a builder to be used in order to build settings.
+     * Returns a builder to be used in order to build strategySettings.
      */
     public static Builder settingsBuilder() {
         return new Builder();
     }
 
     /**
-     * A builder allowing to put different settings and then {@link #build()} an immutable
-     * settings implementation. Use {@link ImmutableSettings#settingsBuilder()} in order to
+     * A builder allowing to put different strategySettings and then {@link #build()} an immutable
+     * strategySettings implementation. Use {@link ImmutableSettings#settingsBuilder()} in order to
      * construct it.
      */
     public static class Builder implements Settings.Builder {
@@ -414,7 +414,7 @@ public class ImmutableSettings implements Settings {
          */
         public Builder putGroup(String settingPrefix, String groupName, String[] settings, String[] values) throws SettingsException {
             if (settings.length != values.length) {
-                throw new SettingsException("The settings length must match the value length");
+                throw new SettingsException("The strategySettings length must match the value length");
             }
             for (int i = 0; i < settings.length; i++) {
                 if (values[i] == null) {
@@ -426,7 +426,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Sets all the provided settings.
+         * Sets all the provided strategySettings.
          */
         public Builder putAll(Settings settings) {
             map.putAll(settings.getAsMap());
@@ -434,7 +434,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Sets all the provided settings.
+         * Sets all the provided strategySettings.
          */
         public Builder putAll(Map<String, String> settings) {
             map.putAll(settings);
@@ -442,7 +442,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Sets all the provided settings.
+         * Sets all the provided strategySettings.
          */
         public Builder putAll(Properties properties) {
             for (Map.Entry entry : properties.entrySet()) {
@@ -452,7 +452,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Loads settings from the actual string content that represents them using the
+         * Loads strategySettings from the actual string content that represents them using the
          * {@link SettingsLoaderFactory#loaderFromSource(String)}.
          */
         public Builder loadFromSource(String source) {
@@ -461,13 +461,13 @@ public class ImmutableSettings implements Settings {
                 Map<String, String> loadedSettings = settingsLoader.load(source);
                 putAll(loadedSettings);
             } catch (IOException e) {
-                throw new SettingsException("Failed to load settings from [" + source + "]");
+                throw new SettingsException("Failed to load strategySettings from [" + source + "]");
             }
             return this;
         }
 
         /**
-         * Loads settings from a url that represents them using the
+         * Loads strategySettings from a url that represents them using the
          * {@link SettingsLoaderFactory#loaderFromSource(String)}.
          */
         public Builder loadFromUrl(URL url) throws SettingsException {
@@ -479,7 +479,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Loads settings from a stream that represents them using the
+         * Loads strategySettings from a stream that represents them using the
          * {@link SettingsLoaderFactory#loaderFromSource(String)}.
          */
         public Builder loadFromStream(String resourceName, InputStream is) throws SettingsException {
@@ -488,13 +488,13 @@ public class ImmutableSettings implements Settings {
                 Map<String, String> loadedSettings = settingsLoader.load(Streams.copyToString(new InputStreamReader(is)));
                 putAll(loadedSettings);
             } catch (IOException e) {
-                throw new SettingsException("Failed to load settings from [" + resourceName + "]");
+                throw new SettingsException("Failed to load strategySettings from [" + resourceName + "]");
             }
             return this;
         }
 
         /**
-         * Loads settings from classpath that represents them using the
+         * Loads strategySettings from classpath that represents them using the
          * {@link SettingsLoaderFactory#loaderFromSource(String)}.
          */
         public Builder loadFromClasspath(String resourceName) throws SettingsException {
@@ -511,7 +511,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Sets the class loader associated with the settings built.
+         * Sets the class loader associated with the strategySettings built.
          */
         public Builder classLoader(ClassLoader classLoader) {
             this.classLoader = classLoader;
@@ -519,7 +519,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Sets the global settings associated with the settings built.
+         * Sets the global strategySettings associated with the strategySettings built.
          */
         public Builder globalSettings(Settings globalSettings) {
             this.globalSettings = globalSettings;
@@ -545,7 +545,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Runs across all the settings set on this builder and replaces <tt>${...}</tt> elements in the
+         * Runs across all the strategySettings set on this builder and replaces <tt>${...}</tt> elements in the
          * each setting value according to the following logic:
          *
          * <p>First, tries to resolve it against a System property ({@link System#getProperty(String)}), next,

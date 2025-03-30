@@ -79,9 +79,9 @@
  *               setXYItemRenderer() --> setRenderer() (DG);
  * 28-Aug-2002 : Added mechanism for (optional) plot annotations (DG);
  * 02-Oct-2002 : Fixed errors reported by Checkstyle (DG);
- * 18-Nov-2002 : Added grid settings for both domain and range axis (previously
+ * 18-Nov-2002 : Added grid strategySettings for both domain and range axis (previously
  *               these were set in the axes) (DG);
- * 09-Jan-2003 : Further additions to the grid settings, plus integrated plot
+ * 09-Jan-2003 : Further additions to the grid strategySettings, plus integrated plot
  *               border bug fix contributed by Gideon Krause (DG);
  * 22-Jan-2003 : Removed monolithic constructor (DG);
  * 04-Mar-2003 : Added 'no data' message, see bug report 691634.  Added

@@ -62,7 +62,7 @@ public abstract class DefaultDeserializationContext
     
     /**
      * Method needed to ensure that {@link ObjectMapper#copy} will work
-     * properly; specifically, that caches are cleared, but settings
+     * properly; specifically, that caches are cleared, but strategySettings
      * will otherwise remain identical; and that no sharing of state
      * occurs.
      * 

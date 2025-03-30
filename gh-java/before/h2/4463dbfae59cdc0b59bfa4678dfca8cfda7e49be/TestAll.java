@@ -103,7 +103,7 @@ java -Xmx512m -Xrunhprof:cpu=samples,depth=8 org.h2.tools.RunScript -url jdbc:h2
         // document cluster: not allowed operations: update/insert with random data (however in a readonly select it is ok)
         
         // test & document cluster: read only selects only go to the first cluster node
-        // test & document settings via -Dh2.check=false
+        // test & document strategySettings via -Dh2.check=false
         
 //        set path=C:\Programme\Java\jdk1.6.0\bin;%PATH%
         

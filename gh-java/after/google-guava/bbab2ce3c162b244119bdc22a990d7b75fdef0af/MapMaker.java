@@ -79,7 +79,7 @@ import java.util.concurrent.TimeUnit;
  * the changes made to the map after the iterator was created.
  *
  * <p>An entry whose key or value is reclaimed by the garbage collector
- * immediately disappears from the map. (If the default settings of strong
+ * immediately disappears from the map. (If the default strategySettings of strong
  * keys and strong values are used, this will never happen.) The client can
  * never observe a partially-reclaimed entry. Any {@link java.util.Map.Entry}
  * instance retrieved from the map's {@linkplain Map#entrySet() entry set}
@@ -104,7 +104,7 @@ public final class MapMaker {
       = new CustomConcurrentHashMap.Builder();
 
   /**
-   * Constructs a new {@code MapMaker} instance with default settings,
+   * Constructs a new {@code MapMaker} instance with default strategySettings,
    * including strong keys, strong values, and no automatic expiration.
    */
   public MapMaker() {}

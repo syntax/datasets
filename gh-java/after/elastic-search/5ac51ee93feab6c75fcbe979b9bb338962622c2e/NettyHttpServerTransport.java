@@ -126,7 +126,7 @@ public class NettyHttpServerTransport extends AbstractComponent implements HttpS
         this.httpKeepAliveTickDuration = componentSettings.getAsTime("httpKeepAliveTickDuration", timeValueMillis(500));
 
         if ((httpKeepAliveTickDuration.millis() * 10) > httpKeepAlive.millis()) {
-            logger.warn("Suspicious keep alive settings, httpKeepAlive set to [{}], while httpKeepAliveTickDuration is set to [{}]", httpKeepAlive, httpKeepAliveTickDuration);
+            logger.warn("Suspicious keep alive strategySettings, httpKeepAlive set to [{}], while httpKeepAliveTickDuration is set to [{}]", httpKeepAlive, httpKeepAliveTickDuration);
         }
 
         // validate max content length

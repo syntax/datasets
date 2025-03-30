@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.util.StdDateFormat;
 
 /**
  * Immutable container class used to store simple configuration
- * settings. Since instances are fully immutable, instances can
+ * strategySettings. Since instances are fully immutable, instances can
  * be freely shared and used without synchronization.
  */
 public final class BaseSettings
@@ -28,7 +28,7 @@ public final class BaseSettings
 
     /*
     /**********************************************************
-    /* Configuration settings; introspection, related
+    /* Configuration strategySettings; introspection, related
     /**********************************************************
      */
     
@@ -69,7 +69,7 @@ public final class BaseSettings
 
     /*
     /**********************************************************
-    /* Configuration settings; type resolution
+    /* Configuration strategySettings; type resolution
     /**********************************************************
      */
 
@@ -81,7 +81,7 @@ public final class BaseSettings
     
     /*
     /**********************************************************
-    /* Configuration settings; other
+    /* Configuration strategySettings; other
     /**********************************************************
      */
     

@@ -98,7 +98,7 @@ public class JgroupsDiscovery extends AbstractComponent implements Discovery, Re
 
         Map<String, String> sysPropsSet = newHashMap();
         try {
-            // prepare system properties to configure jgroups based on the settings
+            // prepare system properties to configure jgroups based on the strategySettings
             for (Map.Entry<String, String> entry : settings.getAsMap().entrySet()) {
                 if (entry.getKey().startsWith("discovery.jgroups")) {
                     String jgroupsKey = entry.getKey().substring("discovery.".length());

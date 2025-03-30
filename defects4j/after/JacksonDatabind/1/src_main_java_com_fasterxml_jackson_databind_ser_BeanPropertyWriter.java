@@ -39,7 +39,7 @@ public class BeanPropertyWriter
     
     /*
     /**********************************************************
-    /* Settings for accessing property value to serialize
+    /* StrategySettings for accessing property value to serialize
     /**********************************************************
      */
 
@@ -86,7 +86,7 @@ public class BeanPropertyWriter
     
     /*
     /**********************************************************
-    /* Serialization settings
+    /* Serialization strategySettings
     /**********************************************************
      */
     
@@ -235,7 +235,7 @@ public class BeanPropertyWriter
         _field = base._field;
         _serializer = base._serializer;
         _nullSerializer = base._nullSerializer;
-        // one more thing: copy internal settings, if any (since 1.7)
+        // one more thing: copy internal strategySettings, if any (since 1.7)
         if (base._internalSettings != null) {
             _internalSettings = new HashMap<Object,Object>(base._internalSettings);
         }
@@ -359,7 +359,7 @@ public class BeanPropertyWriter
 
     /*
     /**********************************************************
-    /* Managing and accessing of opaque internal settings
+    /* Managing and accessing of opaque internal strategySettings
     /* (used by extensions)
     /**********************************************************
      */

@@ -761,7 +761,7 @@ public class DateTimeFormatter {
      * This will parse the text fully according to the formatter, using the UTC zone.
      * Once parsed, only the local date will be used.
      * This means that any parsed time, time-zone or offset field is completely ignored.
-     * It also means that the zone and offset-parsed settings are ignored.
+     * It also means that the zone and offset-parsed strategySettings are ignored.
      *
      * @param text  the text to parse, not null
      * @return the parsed date, never null
@@ -779,7 +779,7 @@ public class DateTimeFormatter {
      * This will parse the text fully according to the formatter, using the UTC zone.
      * Once parsed, only the local time will be used.
      * This means that any parsed date, time-zone or offset field is completely ignored.
-     * It also means that the zone and offset-parsed settings are ignored.
+     * It also means that the zone and offset-parsed strategySettings are ignored.
      *
      * @param text  the text to parse, not null
      * @return the parsed time, never null
@@ -797,7 +797,7 @@ public class DateTimeFormatter {
      * This will parse the text fully according to the formatter, using the UTC zone.
      * Once parsed, only the local date-time will be used.
      * This means that any parsed time-zone or offset field is completely ignored.
-     * It also means that the zone and offset-parsed settings are ignored.
+     * It also means that the zone and offset-parsed strategySettings are ignored.
      *
      * @param text  the text to parse, not null
      * @return the parsed date-time, never null

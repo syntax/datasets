@@ -32,7 +32,7 @@ import com.fasterxml.jackson.databind.util.*;
 
 /**
  * Context for the process of deserialization a single root-level value.
- * Used to allow passing in configuration settings and reusable temporary
+ * Used to allow passing in configuration strategySettings and reusable temporary
  * objects (scrap arrays, containers).
  *<p>
  * Instance life-cycle is such that a partially configured "blueprint" object
@@ -326,7 +326,7 @@ public abstract class DeserializationContext
      */
     public final boolean isEnabled(DeserializationFeature feat) {
         /* 03-Dec-2010, tatu: minor shortcut; since this is called quite often,
-         *   let's use a local copy of feature settings:
+         *   let's use a local copy of feature strategySettings:
          */
         return (_featureFlags & feat.getMask()) != 0;
     }
@@ -870,7 +870,7 @@ public abstract class DeserializationContext
     /**
      * Method that deserializers should call if they encounter a String value
      * that cannot be converted to target property type, in cases where some
-     * String values could be acceptable (either with different settings,
+     * String values could be acceptable (either with different strategySettings,
      * or different value).
      * Default implementation will try to call {@link DeserializationProblemHandler#handleWeirdStringValue}
      * on configured handlers, if any, to allow for recovery; if recovery does not
@@ -914,7 +914,7 @@ public abstract class DeserializationContext
     /**
      * Method that deserializers should call if they encounter a numeric value
      * that cannot be converted to target property type, in cases where some
-     * numeric values could be acceptable (either with different settings,
+     * numeric values could be acceptable (either with different strategySettings,
      * or different numeric value).
      * Default implementation will try to call {@link DeserializationProblemHandler#handleWeirdNumberValue}
      * on configured handlers, if any, to allow for recovery; if recovery does not
@@ -1416,7 +1416,7 @@ trailingToken, ClassUtil.nameOf(targetType)
      */
     
     /**
-     * Helper method called to indicate problem in POJO (serialization) definitions or settings
+     * Helper method called to indicate problem in POJO (serialization) definitions or strategySettings
      * regarding specific Java type, unrelated to actual JSON content to map.
      * Default behavior is to construct and throw a {@link JsonMappingException}.
      *
@@ -1431,7 +1431,7 @@ trailingToken, ClassUtil.nameOf(targetType)
     }
 
     /**
-     * Helper method called to indicate problem in POJO (serialization) definitions or settings
+     * Helper method called to indicate problem in POJO (serialization) definitions or strategySettings
      * regarding specific property (of a type), unrelated to actual JSON content to map.
      * Default behavior is to construct and throw a {@link JsonMappingException}.
      *

@@ -363,7 +363,7 @@ public abstract class Node {
         new NodeTraversor(new OuterHtmlVisitor(accum, ownerDocument().outputSettings())).traverse(this);
     }
 
-    // if this node has no document (or parent), retrieve the default output settings
+    // if this node has no document (or parent), retrieve the default output strategySettings
 
     /**
      Get the outer HTML of this node.

@@ -426,7 +426,7 @@ public abstract class GeneratorBase extends JsonGenerator
 
     /**
      * Helper method used to serialize a {@link java.math.BigDecimal} as a String,
-     * for serialization, taking into account configuration settings
+     * for serialization, taking into account configuration strategySettings
      *
      * @since 2.7.7
      */

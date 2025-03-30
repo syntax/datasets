@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.jsontype.*;
 public class StdTypeResolverBuilder
     implements TypeResolverBuilder<StdTypeResolverBuilder>
 {
-    // Configuration settings:
+    // Configuration strategySettings:
 
     protected JsonTypeInfo.Id _idType;
 

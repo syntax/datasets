@@ -246,7 +246,7 @@ public class OptionBuilder {
     }
 
     /**
-     * <p>Create an Option using the current settings and with 
+     * <p>Create an Option using the current strategySettings and with
      * the specified Option <code>char</code>.</p>
      *
      * @param opt the character representation of the Option
@@ -261,7 +261,7 @@ public class OptionBuilder {
     }
 
     /**
-     * <p>Create an Option using the current settings and with 
+     * <p>Create an Option using the current strategySettings and with
      * the specified Option <code>char</code>.</p>
      *
      * @param opt the <code>java.lang.String</code> representation 

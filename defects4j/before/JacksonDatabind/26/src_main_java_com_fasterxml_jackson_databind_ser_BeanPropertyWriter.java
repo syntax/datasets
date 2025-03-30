@@ -123,7 +123,7 @@ public class BeanPropertyWriter extends PropertyWriter
 
     /*
     /**********************************************************
-    /* Settings for accessing property value to serialize
+    /* StrategySettings for accessing property value to serialize
     /**********************************************************
      */
 
@@ -324,7 +324,7 @@ public class BeanPropertyWriter extends PropertyWriter
 
         _serializer = base._serializer;
         _nullSerializer = base._nullSerializer;
-        // one more thing: copy internal settings, if any (since 1.7)
+        // one more thing: copy internal strategySettings, if any (since 1.7)
         if (base._internalSettings != null) {
             _internalSettings = new HashMap<Object,Object>(base._internalSettings);
         }
@@ -439,7 +439,7 @@ public class BeanPropertyWriter extends PropertyWriter
      */
 
     /* Ideally would not require mutable state, and instead would re-create with
-     * final settings. However, as things are, with sub-types and all, simplest
+     * final strategySettings. However, as things are, with sub-types and all, simplest
      * to just change Field/Method value directly.
      */
     Object readResolve() {
@@ -517,7 +517,7 @@ public class BeanPropertyWriter extends PropertyWriter
     
     /*
     /**********************************************************
-    /* Managing and accessing of opaque internal settings
+    /* Managing and accessing of opaque internal strategySettings
     /* (used by extensions)
     /**********************************************************
      */

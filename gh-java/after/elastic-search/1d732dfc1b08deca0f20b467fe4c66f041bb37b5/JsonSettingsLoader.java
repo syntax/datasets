@@ -33,7 +33,7 @@ import static com.google.common.collect.Lists.*;
 import static com.google.common.collect.Maps.*;
 
 /**
- * Settings loader that loads (parses) the settings in a json format by flattening them
+ * StrategySettings loader that loads (parses) the strategySettings in a json format by flattening them
  * into a map.
  *
  * @author kimchy (Shay Banon)

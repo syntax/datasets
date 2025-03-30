@@ -323,7 +323,7 @@ public final class ToXmlGenerator
     
     /*
     /**********************************************************
-    /* Extended API, passing XML specific settings
+    /* Extended API, passing XML specific strategySettings
     /**********************************************************
      */
 

@@ -26,10 +26,10 @@ import org.elasticsearch.util.concurrent.ThreadSafe;
 import java.util.Map;
 
 /**
- * Immutable settings allowing to control the configuration.
+ * Immutable strategySettings allowing to control the configuration.
  *
  * <p>Using {@link ImmutableSettings#settingsBuilder()} in order to create a builder
- * which in turn can create an immutable implementation of settings.
+ * which in turn can create an immutable implementation of strategySettings.
  *
  * @author kimchy (Shay Banon)
  * @see ImmutableSettings
@@ -38,29 +38,29 @@ import java.util.Map;
 public interface Settings {
 
     /**
-     * The global settings if these settings are group settings.
+     * The global strategySettings if these strategySettings are group strategySettings.
      */
     Settings getGlobalSettings();
 
     /**
-     * Component settings for a specific component. Returns all the settings for the given class, where the
+     * Component strategySettings for a specific component. Returns all the strategySettings for the given class, where the
      * FQN of the class is used, without the <tt>org.elasticsearch<tt> prefix.
      */
     Settings getComponentSettings(Class component);
 
     /**
-     * Component settings for a specific component. Returns all the settings for the given class, where the
+     * Component strategySettings for a specific component. Returns all the strategySettings for the given class, where the
      * FQN of the class is used, without provided prefix.
      */
     Settings getComponentSettings(String prefix, Class component);
 
     /**
-     * The class loader associted with this settings.
+     * The class loader associted with this strategySettings.
      */
     ClassLoader getClassLoader();
 
     /**
-     * The settings as a {@link java.util.Map}.
+     * The strategySettings as a {@link java.util.Map}.
      */
     Map<String, String> getAsMap();
 
@@ -83,7 +83,7 @@ public interface Settings {
     String get(String setting, String defaultValue);
 
     /**
-     * Returns group settings for the given setting prefix.
+     * Returns group strategySettings for the given setting prefix.
      */
     Map<String, Settings> getGroups(String settingPrefix) throws SettingsException;
 
@@ -194,7 +194,7 @@ public interface Settings {
     <T> Class<? extends T> getAsClass(String setting, Class<? extends T> defaultClazz, String prefixPackage, String suffixClassName) throws NoClassSettingsException;
 
     /**
-     * The values associated with a setting prefix as an array. The settings array is in the format of:
+     * The values associated with a setting prefix as an array. The strategySettings array is in the format of:
      * <tt>settingPrefix.[index]</tt>.
      *
      * @param settingPrefix The setting prefix to load the array by
@@ -204,12 +204,12 @@ public interface Settings {
     String[] getAsArray(String settingPrefix) throws SettingsException;
 
     /**
-     * A settings builder interface.
+     * A strategySettings builder interface.
      */
     interface Builder {
 
         /**
-         * Builds the settings.
+         * Builds the strategySettings.
          */
         Settings build();
     }

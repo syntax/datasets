@@ -33,7 +33,7 @@ import static com.google.common.collect.Lists.*;
 import static com.google.common.collect.Maps.*;
 
 /**
- * Loads settings from json source. Basically, flats them into a Map.
+ * Loads strategySettings from json source. Basically, flats them into a Map.
  *
  * @author kimchy (Shay Banon)
  */

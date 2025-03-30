@@ -716,7 +716,7 @@ public abstract class StdDeserializer<T>
 
     /**
      * Helper method called in case where an integral number is encountered, but
-     * config settings suggest that a coercion may be needed to "upgrade"
+     * config strategySettings suggest that a coercion may be needed to "upgrade"
      * {@link java.lang.Number} into "bigger" type like {@link java.lang.Long} or
      * {@link java.math.BigInteger}
      * 
@@ -982,16 +982,16 @@ public abstract class StdDeserializer<T>
 
     /*
     /**********************************************************
-    /* Helper methods for: accessing contextual config settings
+    /* Helper methods for: accessing contextual config strategySettings
     /**********************************************************
      */
     
     /**
      * Helper method that may be used to find if this deserializer has specific
-     * {@link JsonFormat} settings, either via property, or through type-specific
+     * {@link JsonFormat} strategySettings, either via property, or through type-specific
      * defaulting.
      *
-     * @param typeForDefaults Type (erased) used for finding default format settings, if any
+     * @param typeForDefaults Type (erased) used for finding default format strategySettings, if any
      *
      * @since 2.7
      */
@@ -1011,7 +1011,7 @@ public abstract class StdDeserializer<T>
      * <code>JsonFormat.Value.getFeature(feat)</code>
      * to find whether that feature has been specifically marked as enabled or disabled.
      * 
-     * @param typeForDefaults Type (erased) used for finding default format settings, if any
+     * @param typeForDefaults Type (erased) used for finding default format strategySettings, if any
      *
      * @since 2.7
      */

@@ -24,7 +24,7 @@ public abstract class DateTimeSerializerBase<T>
 {
     /**
      * Flag that indicates that serialization must be done as the
-     * Java timestamp, regardless of other settings.
+     * Java timestamp, regardless of other strategySettings.
      */
     protected final Boolean _useTimestamp;
 

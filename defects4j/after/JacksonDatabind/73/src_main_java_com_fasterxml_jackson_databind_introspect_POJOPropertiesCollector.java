@@ -24,7 +24,7 @@ public class POJOPropertiesCollector
      */
 
     /**
-     * Configuration settings
+     * Configuration strategySettings
      */
     protected final MapperConfig<?> _config;
 
@@ -718,7 +718,7 @@ public class POJOPropertiesCollector
 
     /**
      * Method called to further get rid of unwanted individual accessors,
-     * based on read/write settings and rules for "pulling in" accessors
+     * based on read/write strategySettings and rules for "pulling in" accessors
      * (or not).
      */
     protected void _removeUnwantedAccessor(Map<String, POJOPropertyBuilder> props)

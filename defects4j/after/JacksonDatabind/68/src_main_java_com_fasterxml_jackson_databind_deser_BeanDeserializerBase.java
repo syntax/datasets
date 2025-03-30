@@ -1473,7 +1473,7 @@ public abstract class BeanDeserializerBase
             handleIgnoredProperty(p, ctxt, beanOrClass, propName);
         }
         // Otherwise use default handling (call handler(s); if not
-        // handled, throw exception or skip depending on settings)
+        // handled, throw exception or skip depending on strategySettings)
         super.handleUnknownProperty(p, ctxt, beanOrClass, propName);
     }
 

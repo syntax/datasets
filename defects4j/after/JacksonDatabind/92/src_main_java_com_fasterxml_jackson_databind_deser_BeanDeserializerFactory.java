@@ -97,7 +97,7 @@ public class BeanDeserializerFactory
     /**
      * Method used by module registration functionality, to construct a new bean
      * deserializer factory
-     * with different configuration settings.
+     * with different configuration strategySettings.
      */
     @Override
     public DeserializerFactory withConfig(DeserializerFactoryConfig config)

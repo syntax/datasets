@@ -194,7 +194,7 @@ public final class TypeFactory
 
     /**
      * Mutant factory method that will construct new {@link TypeFactory} with
-     * identical settings except for different cache; most likely one with
+     * identical strategySettings except for different cache; most likely one with
      * bigger maximum size.
      *
      * @since 2.8

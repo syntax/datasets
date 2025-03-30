@@ -215,7 +215,7 @@ public class ObjectMapper
     protected final static PrettyPrinter _defaultPrettyPrinter = new DefaultPrettyPrinter();
     
     /**
-     * Base settings contain defaults used for all {@link ObjectMapper}
+     * Base strategySettings contain defaults used for all {@link ObjectMapper}
      * instances.
      */
     protected final static BaseSettings DEFAULT_BASE = new BaseSettings(DEFAULT_INTROSPECTOR,
@@ -229,7 +229,7 @@ public class ObjectMapper
 
     /*
     /**********************************************************
-    /* Configuration settings, shared
+    /* Configuration strategySettings, shared
     /**********************************************************
      */
 
@@ -264,7 +264,7 @@ public class ObjectMapper
     
     /*
     /**********************************************************
-    /* Configuration settings: mix-in annotations
+    /* Configuration strategySettings: mix-in annotations
     /**********************************************************
      */
     
@@ -283,13 +283,13 @@ public class ObjectMapper
     
     /*
     /**********************************************************
-    /* Configuration settings, serialization
+    /* Configuration strategySettings, serialization
     /**********************************************************
      */
 
     /**
      * Configuration object that defines basic global
-     * settings for the serialization process
+     * strategySettings for the serialization process
      */
     protected SerializationConfig _serializationConfig;
 
@@ -312,13 +312,13 @@ public class ObjectMapper
 
     /*
     /**********************************************************
-    /* Configuration settings, deserialization
+    /* Configuration strategySettings, deserialization
     /**********************************************************
      */
 
     /**
      * Configuration object that defines basic global
-     * settings for the serialization process
+     * strategySettings for the serialization process
      */
     protected DeserializationConfig _deserializationConfig;
 
@@ -800,9 +800,9 @@ public class ObjectMapper
 
     /**
      * Method that returns the shared default {@link SerializationConfig}
-     * object that defines configuration settings for serialization.
+     * object that defines configuration strategySettings for serialization.
      *<p>
-     * Note that since instances are immutable, you can NOT change settings
+     * Note that since instances are immutable, you can NOT change strategySettings
      * by accessing an instance and calling methods: this will simply create
      * new instance of config object.
      */
@@ -813,9 +813,9 @@ public class ObjectMapper
     /**
      * Method that returns
      * the shared default {@link DeserializationConfig} object
-     * that defines configuration settings for deserialization.
+     * that defines configuration strategySettings for deserialization.
      *<p>
-     * Note that since instances are immutable, you can NOT change settings
+     * Note that since instances are immutable, you can NOT change strategySettings
      * by accessing an instance and calling methods: this will simply create
      * new instance of config object.
      */
@@ -826,7 +826,7 @@ public class ObjectMapper
     /**
      * Method for getting current {@link DeserializationContext}.
       *<p>
-     * Note that since instances are immutable, you can NOT change settings
+     * Note that since instances are immutable, you can NOT change strategySettings
      * by accessing an instance and calling methods: this will simply create
      * new instance of context object.
     */
@@ -852,7 +852,7 @@ public class ObjectMapper
     /**
      * Method for getting current {@link SerializerFactory}.
       *<p>
-     * Note that since instances are immutable, you can NOT change settings
+     * Note that since instances are immutable, you can NOT change strategySettings
      * by accessing an instance and calling methods: this will simply create
      * new instance of factory object.
      */
@@ -1298,7 +1298,7 @@ public class ObjectMapper
 
     /**
      * Method that allows overriding of the underlying {@link SerializationConfig}
-     * object, which contains serialization-specific configuration settings.
+     * object, which contains serialization-specific configuration strategySettings.
      * It is added as a fallback method that may be used if no other configuration
      * modifier method works: it should not be used if there are alternatives,
      * and its use is generally discouraged.
@@ -2298,7 +2298,7 @@ public class ObjectMapper
      *<p>
      * Note: method does not close the underlying stream explicitly
      * here; however, {@link JsonFactory} this mapper uses may choose
-     * to close the stream depending on its settings (by default,
+     * to close the stream depending on its strategySettings (by default,
      * it will try to close it when {@link JsonGenerator} we construct
      * is closed).
      */
@@ -2314,7 +2314,7 @@ public class ObjectMapper
      *<p>
      * Note: method does not close the underlying stream explicitly
      * here; however, {@link JsonFactory} this mapper uses may choose
-     * to close the stream depending on its settings (by default,
+     * to close the stream depending on its strategySettings (by default,
      * it will try to close it when {@link JsonGenerator} we construct
      * is closed).
      */
@@ -2383,7 +2383,7 @@ public class ObjectMapper
 
     /**
      * Convenience method for constructing {@link ObjectWriter}
-     * with default settings.
+     * with default strategySettings.
      */
     public ObjectWriter writer() {
         return new ObjectWriter(this, getSerializationConfig());
@@ -2391,7 +2391,7 @@ public class ObjectMapper
 
     /**
      * Factory method for constructing {@link ObjectWriter} with
-     * specified feature enabled (compared to settings that this
+     * specified feature enabled (compared to strategySettings that this
      * mapper instance has).
      */
     public ObjectWriter writer(SerializationFeature feature) {
@@ -2400,7 +2400,7 @@ public class ObjectMapper
 
     /**
      * Factory method for constructing {@link ObjectWriter} with
-     * specified features enabled (compared to settings that this
+     * specified features enabled (compared to strategySettings that this
      * mapper instance has).
      */
     public ObjectWriter writer(SerializationFeature first,
@@ -2540,7 +2540,7 @@ public class ObjectMapper
 
     /**
      * Factory method for constructing {@link ObjectReader} with
-     * default settings. Note that the resulting instance is NOT usable as is,
+     * default strategySettings. Note that the resulting instance is NOT usable as is,
      * without defining expected value type.
      */
     public ObjectReader reader() {
@@ -2550,7 +2550,7 @@ public class ObjectMapper
 
     /**
      * Factory method for constructing {@link ObjectReader} with
-     * specified feature enabled (compared to settings that this
+     * specified feature enabled (compared to strategySettings that this
      * mapper instance has).
      * Note that the resulting instance is NOT usable as is,
      * without defining expected value type.
@@ -2561,7 +2561,7 @@ public class ObjectMapper
 
     /**
      * Factory method for constructing {@link ObjectReader} with
-     * specified features enabled (compared to settings that this
+     * specified features enabled (compared to strategySettings that this
      * mapper instance has).
      * Note that the resulting instance is NOT usable as is,
      * without defining expected value type.

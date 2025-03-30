@@ -28,7 +28,7 @@ import java.util.Properties;
 import static com.google.common.collect.Maps.*;
 
 /**
- * Settings loader that loads (parses) the settings in a properties format.
+ * StrategySettings loader that loads (parses) the strategySettings in a properties format.
  *
  * @author kimchy (Shay Banon)
  */

@@ -415,7 +415,7 @@ public class BOBYQAOptimizer
         double fsave = fAtInterpolationPoints.getEntry(0);
         final int kbase = 0;
 
-        // Complete the settings that are required for the iterative procedure.
+        // Complete the strategySettings that are required for the iterative procedure.
 
         int ntrits = 0;
         int itest = 0;

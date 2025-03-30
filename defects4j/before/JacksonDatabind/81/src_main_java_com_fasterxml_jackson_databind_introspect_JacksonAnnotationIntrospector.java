@@ -83,7 +83,7 @@ public class JacksonAnnotationIntrospector
 
     /*
     /**********************************************************
-    /* Local configuration settings
+    /* Local configuration strategySettings
     /**********************************************************
      */
 
@@ -1393,7 +1393,7 @@ public class JacksonAnnotationIntrospector
                 return null;
             }
             /* let's not try to force access override (would need to pass
-             * settings through if we did, since that's not doable on some
+             * strategySettings through if we did, since that's not doable on some
              * platforms)
              */
             b = config.typeResolverBuilderInstance(ann, resAnn.value());

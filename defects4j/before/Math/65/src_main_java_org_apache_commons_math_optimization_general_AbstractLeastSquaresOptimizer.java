@@ -36,7 +36,7 @@ import org.apache.commons.math.optimization.VectorialPointValuePair;
 /**
  * Base class for implementing least squares optimizers.
  * <p>This base class handles the boilerplate methods associated to thresholds
- * settings, jacobian and error estimation.</p>
+ * strategySettings, jacobian and error estimation.</p>
  * @version $Revision$ $Date$
  * @since 1.2
  *
@@ -109,7 +109,7 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
     /** Objective function derivatives. */
     private MultivariateMatrixFunction jF;
 
-    /** Simple constructor with default settings.
+    /** Simple constructor with default strategySettings.
      * <p>The convergence check is set to a {@link SimpleVectorialValueChecker}
      * and the maximal number of evaluation is set to its default value.</p>
      */

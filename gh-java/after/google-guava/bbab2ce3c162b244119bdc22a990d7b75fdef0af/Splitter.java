@@ -110,7 +110,7 @@ public final class Splitter {
    * containing {@code ["foo", "", "bar"]}.
    *
    * @param separator the character to recognize as a separator
-   * @return a splitter, with default settings, that recognizes that separator
+   * @return a splitter, with default strategySettings, that recognizes that separator
    */
   public static Splitter on(char separator) {
     return on(CharMatcher.is(separator));
@@ -124,7 +124,7 @@ public final class Splitter {
    *
    * @param separatorMatcher a {@link CharMatcher} that determines whether a
    *     character is a separator
-   * @return a splitter, with default settings, that uses this matcher
+   * @return a splitter, with default strategySettings, that uses this matcher
    */
   public static Splitter on(final CharMatcher separatorMatcher) {
     checkNotNull(separatorMatcher);
@@ -151,7 +151,7 @@ public final class Splitter {
    * iterable containing {@code ["foo", "bar", "baz,qux"]}.
    *
    * @param separator the literal, nonempty string to recognize as a separator
-   * @return a splitter, with default settings, that recognizes that separator
+   * @return a splitter, with default strategySettings, that recognizes that separator
    */
   public static Splitter on(final String separator) {
     checkArgument(separator.length() != 0,
@@ -193,7 +193,7 @@ public final class Splitter {
    *
    * @param separatorPattern the pattern that determines whether a subsequence
    *     is a separator. This pattern may not match the empty string.
-   * @return a splitter, with default settings, that uses this pattern
+   * @return a splitter, with default strategySettings, that uses this pattern
    * @throws IllegalArgumentException if {@code separatorPattern} matches the
    *     empty string
    */
@@ -228,7 +228,7 @@ public final class Splitter {
    *
    * @param separatorPattern the pattern that determines whether a subsequence
    *     is a separator. This pattern may not match the empty string.
-   * @return a splitter, with default settings, that uses this pattern
+   * @return a splitter, with default strategySettings, that uses this pattern
    * @throws PatternSyntaxException if {@code separatorPattern} is a malformed
    *     expression
    * @throws IllegalArgumentException if {@code separatorPattern} matches the
@@ -245,7 +245,7 @@ public final class Splitter {
    * smaller than {@code length} but will never be empty.
    *
    * @param length the desired length of pieces after splitting
-   * @return a splitter, with default settings, that can split into fixed sized
+   * @return a splitter, with default strategySettings, that can split into fixed sized
    *     pieces
    */
   public static Splitter fixedLength(final int length) {

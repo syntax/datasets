@@ -100,7 +100,7 @@ public abstract class BasicDeserializerFactory
      */
     
     /**
-     * Configuration settings for this factory; immutable instance (just like this
+     * Configuration strategySettings for this factory; immutable instance (just like this
      * factory), new version created via copy-constructor (fluent-style)
      */
     protected final DeserializerFactoryConfig _factoryConfig;
@@ -118,7 +118,7 @@ public abstract class BasicDeserializerFactory
     /**
      * Method for getting current {@link DeserializerFactoryConfig}.
       *<p>
-     * Note that since instances are immutable, you can NOT change settings
+     * Note that since instances are immutable, you can NOT change strategySettings
      * by accessing an instance and calling methods: this will simply create
      * new instance of config object.
      */

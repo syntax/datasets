@@ -342,7 +342,7 @@ public class ImmutableSettings implements Settings {
 
         public Builder putGroup(String settingPrefix, String groupName, String[] settings, String[] values) throws SettingsException {
             if (settings.length != values.length) {
-                throw new SettingsException("The settings length must match the value length");
+                throw new SettingsException("The strategySettings length must match the value length");
             }
             for (int i = 0; i < settings.length; i++) {
                 if (values[i] == null) {
@@ -371,7 +371,7 @@ public class ImmutableSettings implements Settings {
         }
 
         /**
-         * Loads settings from the actual string content that represents them.
+         * Loads strategySettings from the actual string content that represents them.
          */
         public Builder loadFromSource(String source) {
             SettingsLoader settingsLoader = SettingsLoaderFactory.loaderFromSource(source);
@@ -379,7 +379,7 @@ public class ImmutableSettings implements Settings {
                 Map<String, String> loadedSettings = settingsLoader.load(source);
                 putAll(loadedSettings);
             } catch (IOException e) {
-                throw new SettingsException("Failed to load settings from [" + source + "]");
+                throw new SettingsException("Failed to load strategySettings from [" + source + "]");
             }
             return this;
         }
@@ -398,7 +398,7 @@ public class ImmutableSettings implements Settings {
                 Map<String, String> loadedSettings = settingsLoader.load(Streams.copyToString(new InputStreamReader(is)));
                 putAll(loadedSettings);
             } catch (IOException e) {
-                throw new SettingsException("Failed to load settings from [" + resourceName + "]");
+                throw new SettingsException("Failed to load strategySettings from [" + resourceName + "]");
             }
             return this;
         }

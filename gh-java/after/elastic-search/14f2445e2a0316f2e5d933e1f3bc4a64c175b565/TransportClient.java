@@ -85,7 +85,7 @@ public class TransportClient implements Client {
 
 
     /**
-     * Constructs a new transport client with settings loaded either from the classpath or the file system (the
+     * Constructs a new transport client with strategySettings loaded either from the classpath or the file system (the
      * <tt>elasticsearch.(yml|json)</tt> files optionally prefixed with <tt>config/</tt>).
      */
     public TransportClient() throws ElasticSearchException {
@@ -93,7 +93,7 @@ public class TransportClient implements Client {
     }
 
     /**
-     * Constructs a new transport client with explicit settings and settings loaded either from the classpath or the file
+     * Constructs a new transport client with explicit strategySettings and strategySettings loaded either from the classpath or the file
      * system (the <tt>elasticsearch.(yml|json)</tt> files optionally prefixed with <tt>config/</tt>).
      */
     public TransportClient(Settings settings) {
@@ -101,12 +101,12 @@ public class TransportClient implements Client {
     }
 
     /**
-     * Constructs a new transport client with the provided settings and the ability to control if settings will
+     * Constructs a new transport client with the provided strategySettings and the ability to control if strategySettings will
      * be loaded from the classpath / file system (the <tt>elasticsearch.(yml|json)</tt> files optionally prefixed with
      * <tt>config/</tt>).
      *
-     * @param pSettings          The explicit settings.
-     * @param loadConfigSettings <tt>true</tt> if settings should be loaded from the classpath/file system.
+     * @param pSettings          The explicit strategySettings.
+     * @param loadConfigSettings <tt>true</tt> if strategySettings should be loaded from the classpath/file system.
      * @throws ElasticSearchException
      */
     public TransportClient(Settings pSettings, boolean loadConfigSettings) throws ElasticSearchException {

@@ -213,7 +213,7 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
     public String html() {
         StringBuilder accum = new StringBuilder();
         try {
-            html(accum, (new Document("")).outputSettings()); // output settings a bit funky, but this html() seldom used
+            html(accum, (new Document("")).outputSettings()); // output strategySettings a bit funky, but this html() seldom used
         } catch (IOException e) { // ought never happen
             throw new SerializationException(e);
         }

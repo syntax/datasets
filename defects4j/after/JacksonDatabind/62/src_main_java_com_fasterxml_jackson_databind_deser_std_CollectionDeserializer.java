@@ -45,7 +45,7 @@ public class CollectionDeserializer
      */
     protected final TypeDeserializer _valueTypeDeserializer;
 
-    // // Instance construction settings:
+    // // Instance construction strategySettings:
 
     protected final ValueInstantiator _valueInstantiator;
 
@@ -103,7 +103,7 @@ public class CollectionDeserializer
 
     /**
      * Copy-constructor that can be used by sub-classes to allow
-     * copy-on-write styling copying of settings of an existing instance.
+     * copy-on-write styling copying of strategySettings of an existing instance.
      */
     protected CollectionDeserializer(CollectionDeserializer src)
     {

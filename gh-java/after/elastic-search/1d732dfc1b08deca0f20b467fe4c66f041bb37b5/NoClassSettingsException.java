@@ -21,7 +21,7 @@ package org.elasticsearch.util.settings;
 
 /**
  * A specific type of {@link SettingsException} indicating failure to load a class
- * based on a settings value.
+ * based on a strategySettings value.
  *
  * @author kimchy (Shay Banon)
  */

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.JavaType;
  * Type that represents things that act similar to {@link java.util.Collection};
  * but may or may not be instances of that interface.
  * This specifically allows framework to check for configuration and annotation
- * settings used for Map types, and pass these to custom handlers that may be more
+ * strategySettings used for Map types, and pass these to custom handlers that may be more
  * familiar with actual type.
  */
 public class CollectionLikeType extends TypeBase

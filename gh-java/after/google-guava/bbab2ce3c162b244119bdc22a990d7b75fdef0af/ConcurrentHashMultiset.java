@@ -68,7 +68,7 @@ public final class ConcurrentHashMultiset<E> extends AbstractMultiset<E>
 
   /**
    * Creates a new, empty {@code ConcurrentHashMultiset} using the default
-   * initial capacity, load factor, and concurrency settings.
+   * initial capacity, load factor, and concurrency strategySettings.
    */
   public static <E> ConcurrentHashMultiset<E> create() {
     return new ConcurrentHashMultiset<E>(new ConcurrentHashMap<E, Integer>());
@@ -77,7 +77,7 @@ public final class ConcurrentHashMultiset<E> extends AbstractMultiset<E>
   /**
    * Creates a new {@code ConcurrentHashMultiset} containing the specified
    * elements, using the default initial capacity, load factor, and concurrency
-   * settings.
+   * strategySettings.
    *
    * @param elements the elements that the multiset should contain
    */

@@ -118,7 +118,7 @@ public abstract class BasicSerializerFactory
      */
     
     /**
-     * Configuration settings for this factory; immutable instance (just like this
+     * Configuration strategySettings for this factory; immutable instance (just like this
      * factory), new version created via copy-constructor (fluent-style)
      */
     protected final SerializerFactoryConfig _factoryConfig;
@@ -141,7 +141,7 @@ public abstract class BasicSerializerFactory
     /**
      * Method for getting current {@link SerializerFactoryConfig}.
       *<p>
-     * Note that since instances are immutable, you can NOT change settings
+     * Note that since instances are immutable, you can NOT change strategySettings
      * by accessing an instance and calling methods: this will simply create
      * new instance of config object.
      */
@@ -1083,7 +1083,7 @@ public abstract class BasicSerializerFactory
     }
 
     /**
-     * Helper method to check whether global settings and/or class
+     * Helper method to check whether global strategySettings and/or class
      * annotations for the bean class indicate that static typing
      * (declared types)  should be used for properties.
      * (instead of dynamic runtime types).

@@ -25,7 +25,7 @@ import org.apache.commons.math.linear.RealMatrixImpl;
 /**
  * Base class for implementing estimators.
  * <p>This base class handles the boilerplates methods associated to thresholds
- * settings, jacobian and error estimation.</p>
+ * strategySettings, jacobian and error estimation.</p>
  * @version $Revision$ $Date$
  * @since 1.2
  *

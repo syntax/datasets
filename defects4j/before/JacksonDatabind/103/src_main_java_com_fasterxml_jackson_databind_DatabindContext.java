@@ -56,7 +56,7 @@ public abstract class DatabindContext
 
     /*
     /**********************************************************
-    /* Access to specific config settings
+    /* Access to specific config strategySettings
     /**********************************************************
      */
     

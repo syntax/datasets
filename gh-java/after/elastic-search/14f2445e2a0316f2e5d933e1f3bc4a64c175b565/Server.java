@@ -34,7 +34,7 @@ import org.elasticsearch.util.settings.Settings;
 public interface Server {
 
     /**
-     * The settings that were used to create the server.
+     * The strategySettings that were used to create the server.
      */
     Settings settings();
 

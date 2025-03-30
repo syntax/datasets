@@ -204,7 +204,7 @@ public class Document extends Element {
     }
 
     /**
-     * A Document's output settings control the form of the text() and html() methods.
+     * A Document's output strategySettings control the form of the text() and html() methods.
      */
     public static class OutputSettings implements Cloneable {
         private Entities.EscapeMode escapeMode = Entities.EscapeMode.base;
@@ -230,7 +230,7 @@ public class Document extends Element {
         /**
          * Set the document's escape mode
          * @param escapeMode the new escape mode to use
-         * @return the document's output settings, for chaining
+         * @return the document's output strategySettings, for chaining
          */
         public OutputSettings escapeMode(Entities.EscapeMode escapeMode) {
             this.escapeMode = escapeMode;
@@ -252,7 +252,7 @@ public class Document extends Element {
         /**
          * Update the document's output charset.
          * @param charset the new charset to use.
-         * @return the document's output settings, for chaining
+         * @return the document's output strategySettings, for chaining
          */
         public OutputSettings charset(Charset charset) {
             // todo: this should probably update the doc's meta charset
@@ -264,7 +264,7 @@ public class Document extends Element {
         /**
          * Update the document's output charset.
          * @param charset the new charset (by name) to use.
-         * @return the document's output settings, for chaining
+         * @return the document's output strategySettings, for chaining
          */
         public OutputSettings charset(String charset) {
             charset(Charset.forName(charset));
@@ -329,16 +329,16 @@ public class Document extends Element {
     }
 
     /**
-     * Get the document's current output settings.
-     * @return the document's current output settings.
+     * Get the document's current output strategySettings.
+     * @return the document's current output strategySettings.
      */
     public OutputSettings outputSettings() {
         return outputSettings;
     }
 
     /**
-     * Set the document's output settings.
-     * @param outputSettings new output settings.
+     * Set the document's output strategySettings.
+     * @param outputSettings new output strategySettings.
      * @return this document, for chaining.
      */
     public Document outputSettings(OutputSettings outputSettings) {

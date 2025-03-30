@@ -261,7 +261,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @param y array containing the current value of the state vector
      * @param yDot placeholder array where to put the time derivative of the state vector
      * @exception MaxCountExceededException if the number of functions evaluations is exceeded
-     * @exception DimensionMismatchException if arrays dimensions do not match equations settings
+     * @exception DimensionMismatchException if arrays dimensions do not match equations strategySettings
      */
     public void computeDerivatives(final double t, final double[] y, final double[] yDot)
         throws MaxCountExceededException, DimensionMismatchException {
@@ -290,7 +290,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @exception MaxCountExceededException if the interpolator throws one because
      * the number of functions evaluations is exceeded
      * @exception NoBracketingException if the location of an event cannot be bracketed
-     * @exception DimensionMismatchException if arrays dimensions do not match equations settings
+     * @exception DimensionMismatchException if arrays dimensions do not match equations strategySettings
      * @since 2.2
      */
     protected double acceptStep(final AbstractStepInterpolator interpolator,
@@ -409,7 +409,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @param t target time for the integration
      * @exception NumberIsTooSmallException if integration span is too small
      * @exception DimensionMismatchException if adaptive step size integrators
-     * tolerance arrays dimensions are not compatible with equations settings
+     * tolerance arrays dimensions are not compatible with equations strategySettings
      */
     protected void sanityChecks(final ExpandableStatefulODE equations, final double t)
         throws NumberIsTooSmallException, DimensionMismatchException {

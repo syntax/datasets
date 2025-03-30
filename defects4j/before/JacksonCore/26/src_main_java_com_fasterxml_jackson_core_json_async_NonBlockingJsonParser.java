@@ -104,7 +104,7 @@ public class NonBlockingJsonParser
         // Also need to adjust row start, to work as if it extended into the past wrt new buffer
         _currInputRowStart = start - (_inputEnd - _currInputRowStart);
 
-        // And then update buffer settings
+        // And then update buffer strategySettings
         _inputBuffer = buf;
         _inputPtr = start;
         _inputEnd = end;

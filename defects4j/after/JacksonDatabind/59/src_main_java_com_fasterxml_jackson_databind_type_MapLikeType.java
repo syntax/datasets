@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.JavaType;
  * but that do not necessarily implement {@link java.util.Map}, but that do not
  * have enough introspection functionality to allow for some level of generic
  * handling. This specifically allows framework to check for configuration and
- * annotation settings used for Map types, and pass these to custom handlers
+ * annotation strategySettings used for Map types, and pass these to custom handlers
  * that may be more familiar with actual type.
  */
 public class MapLikeType extends TypeBase {

@@ -33,7 +33,7 @@ public final class StringCollectionDeserializer
      */
     protected final JsonDeserializer<String> _valueDeserializer;
 
-    // // Instance construction settings:
+    // // Instance construction strategySettings:
     
     /**
      * Instantiator used in case custom handling is needed for creation.

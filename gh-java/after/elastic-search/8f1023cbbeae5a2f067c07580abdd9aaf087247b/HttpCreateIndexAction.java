@@ -59,7 +59,7 @@ public class HttpCreateIndexAction extends BaseHttpServerHandler {
                 indexSettings = ImmutableSettings.settingsBuilder().loadFromSource(bodySettings).build();
             } catch (Exception e) {
                 try {
-                    channel.sendResponse(new JsonThrowableHttpResponse(request, BAD_REQUEST, new SettingsException("Failed to parse index settings", e)));
+                    channel.sendResponse(new JsonThrowableHttpResponse(request, BAD_REQUEST, new SettingsException("Failed to parse index strategySettings", e)));
                 } catch (IOException e1) {
                     logger.warn("Failed to send response", e1);
                     return;

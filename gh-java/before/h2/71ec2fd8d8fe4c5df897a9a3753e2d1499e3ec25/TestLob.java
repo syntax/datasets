@@ -271,7 +271,7 @@ public class TestLob extends TestBase {
         conn = reconnect(conn);
         stat = conn.createStatement();
         ResultSet rs;
-        rs = stat.executeQuery("select value from information_schema.settings where NAME='COMPRESS_LOB'");
+        rs = stat.executeQuery("select value from information_schema.strategySettings where NAME='COMPRESS_LOB'");
         rs.next();
         check(rs.getString(1), compress ? "LZF" : "NO");
         checkFalse(rs.next());

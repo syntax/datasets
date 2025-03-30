@@ -247,7 +247,7 @@ public class StdDateFormat
      * and not via underlying {@link Calendar} instance like base class
      * does.
      */
-            // and since leniency settings may have been used:
+            // and since leniency strategySettings may have been used:
 
     @Override // since 2.7
     public boolean isLenient() {

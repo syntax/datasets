@@ -42,8 +42,8 @@ import org.apache.commons.codec.language.bm.Rule.Phoneme;
  * the same word from different languages.
  * <p>
  * This class is intentionally immutable and thread-safe.
- * If you wish to alter the settings for a PhoneticEngine, you
- * must make a new one with the updated settings.
+ * If you wish to alter the strategySettings for a PhoneticEngine, you
+ * must make a new one with the updated strategySettings.
  * <p>
  * Ported from phoneticengine.php
  *

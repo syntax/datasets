@@ -141,7 +141,7 @@
  * 23-Nov-2006 : Added support for URLs for the legend items (DG);
  * 24-Nov-2006 : Cloning fixes (DG);
  * 17-Apr-2007 : Check for null label in legend items (DG);
- * 19-Apr-2007 : Deprecated override settings (DG);
+ * 19-Apr-2007 : Deprecated override strategySettings (DG);
  * 18-May-2007 : Set dataset for LegendItem (DG);
  * 14-Jun-2007 : Added label distributor attribute (DG);
  * 19-Jun-2007 : Removed deprecated code (DG);
@@ -219,7 +219,7 @@ import org.jfree.data.general.PieDataset;
  * Special notes:
  * <ol>
  * <li>the default starting point is 12 o'clock and the pie sections proceed
- * in a clockwise direction, but these settings can be changed;</li>
+ * in a clockwise direction, but these strategySettings can be changed;</li>
  * <li>negative values in the dataset are ignored;</li>
  * <li>there are utility methods for creating a {@link PieDataset} from a
  * {@link org.jfree.data.category.CategoryDataset};</li>
@@ -823,7 +823,7 @@ public class PiePlot extends Plot implements Cloneable, Serializable {
      * 
      * @param key  the section key.
      * @param autoPopulate  a flag that controls whether the drawing supplier 
-     *     is used to auto-populate the section paint settings.
+     *     is used to auto-populate the section paint strategySettings.
      *     
      * @return The paint.
      * 
@@ -1011,7 +1011,7 @@ public class PiePlot extends Plot implements Cloneable, Serializable {
      * 
      * @param key  the section key.
      * @param autoPopulate  a flag that controls whether the drawing supplier 
-     *     is used to auto-populate the section outline paint settings.
+     *     is used to auto-populate the section outline paint strategySettings.
      *     
      * @return The paint.
      * 
@@ -1146,7 +1146,7 @@ public class PiePlot extends Plot implements Cloneable, Serializable {
      * 
      * @param key  the section key.
      * @param autoPopulate  a flag that controls whether the drawing supplier 
-     *     is used to auto-populate the section outline stroke settings.
+     *     is used to auto-populate the section outline stroke strategySettings.
      *     
      * @return The stroke.
      * 

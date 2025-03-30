@@ -315,7 +315,7 @@ public class StdDateFormat
         Boolean newValue = Boolean.valueOf(enabled);
         if (!_equals(newValue, _lenient)) {
             _lenient = newValue;
-            // and since leniency settings may have been used:
+            // and since leniency strategySettings may have been used:
             _clearFormats();
         }
     }

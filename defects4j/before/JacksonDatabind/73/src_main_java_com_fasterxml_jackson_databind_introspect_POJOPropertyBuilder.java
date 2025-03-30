@@ -558,7 +558,7 @@ public class POJOPropertyBuilder
         AnnotatedMember a = getAccessor();
         // 16-Apr-2106, tatu: Let's include per-type default inclusion too
         // 17-Aug-2016, tatu: Do NOT include global, or per-type defaults, because
-        //    not all of this information (specifically, enclosing type's settings)
+        //    not all of this information (specifically, enclosing type's strategySettings)
         //    is available here
         JsonInclude.Value v = (_annotationIntrospector == null) ?
                 null : _annotationIntrospector.findPropertyInclusion(a);

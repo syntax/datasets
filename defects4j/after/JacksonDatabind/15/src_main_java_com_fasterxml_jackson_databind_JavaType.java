@@ -305,7 +305,7 @@ public abstract class JavaType
      * Accessor for checking whether handlers for dealing with values of
      * this type should use static typing (as opposed to dynamic typing).
      * Note that while value of 'true' does mean that static typing is to
-     * be used, value of 'false' may still be overridden by other settings.
+     * be used, value of 'false' may still be overridden by other strategySettings.
      * 
      * @since 2.2
      */

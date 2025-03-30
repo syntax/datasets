@@ -2,7 +2,7 @@
 Settings and configuration for Django.
 
 Values will be read from the module specified by the DJANGO_SETTINGS_MODULE environment
-variable, and then from django.conf.global_settings; see the global settings file for 
+variable, and then from django.conf.global_settings; see the global strategySettings file for
 a list of all possible variables.
 """
 
@@ -13,7 +13,7 @@ from django.conf import global_settings
 # get a reference to this module (why isn't there a __module__ magic var?) 
 me = sys.modules[__name__]
 
-# update this dict from global settings (but only for ALL_CAPS settings)
+# update this dict from global strategySettings (but only for ALL_CAPS strategySettings)
 for setting in dir(global_settings):
     if setting == setting.upper():
         setattr(me, setting, getattr(global_settings, setting))

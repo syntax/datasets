@@ -54,7 +54,7 @@ public class GaussNewtonOptimizer extends AbstractLeastSquaresOptimizer {
     private final boolean useLU;
 
     /**
-     * Simple constructor with default settings.
+     * Simple constructor with default strategySettings.
      * The normal equations will be solved using LU decomposition.
      *
      * @param checker Convergence checker.

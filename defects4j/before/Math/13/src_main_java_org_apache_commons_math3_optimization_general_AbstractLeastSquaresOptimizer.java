@@ -43,7 +43,7 @@ import org.apache.commons.math3.util.FastMath;
 
 /**
  * Base class for implementing least squares optimizers.
- * It handles the boilerplate methods associated to thresholds settings,
+ * It handles the boilerplate methods associated to thresholds strategySettings,
  * Jacobian and error estimation.
  * <br/>
  * This class constructs the Jacobian matrix of the function argument in method
@@ -119,7 +119,7 @@ public abstract class AbstractLeastSquaresOptimizer
     private RealMatrix weightMatrixSqrt;
 
     /**
-     * Simple constructor with default settings.
+     * Simple constructor with default strategySettings.
      * The convergence check is set to a {@link
      * org.apache.commons.math3.optimization.SimpleVectorValueChecker}.
      * @deprecated See {@link org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()}

@@ -725,7 +725,7 @@ public class BeanSerializerFactory
         }
         // 05-Sep-2013, tatu: should be primary property serializer so:
         annotatedSerializer = prov.handlePrimaryContextualization(annotatedSerializer, property);
-        // And how about polymorphic typing? First special to cover JAXB per-field settings:
+        // And how about polymorphic typing? First special to cover JAXB per-field strategySettings:
         TypeSerializer contentTypeSer = null;
         // 16-Feb-2014, cgc: contentType serializers for collection-like and map-like types
         if (ClassUtil.isCollectionMapOrArray(type.getRawClass()) || type.isCollectionLikeType() || type.isMapLikeType()) {

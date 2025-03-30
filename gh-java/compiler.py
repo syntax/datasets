@@ -2,6 +2,7 @@ import os
 import subprocess
 import shutil
 from pathlib import Path
+from typing import Optional
 
 # Change to "verbose" for detailed logs, or "stats" for minimal logs
 OUTPUT_MODE = "stats"
@@ -63,7 +64,6 @@ def run_cmd(cmd, cwd=None, capture_output=False):
             capture_output=True, text=True
         )
     else:
-        # 'verbose' mode or we explicitly want output
         return subprocess.run(cmd, cwd=cwd, check=True)
 
 def clone_repos():
@@ -77,7 +77,7 @@ def clone_repos():
 
 def checkout_commit(repo_path, commit_hash):
     """
-    Force checkout a specific commit, discarding any local changes,
+    force checkout a specific commit, discarding any local changes,
     and clean untracked files to ensure a fresh state.
     """
     try:
@@ -85,17 +85,15 @@ def checkout_commit(repo_path, commit_hash):
         run_cmd(['git', 'clean', '-xfd'], cwd=repo_path)
     except subprocess.CalledProcessError as e:
         log(f"Error during checkout of commit {commit_hash}: {e}")
-        raise  # Re-raise so we can catch it at a higher level if needed
+        raise  # re-raise so can catch it at a higher level if needed
 
 def get_previous_commit(repo_path, commit_hash):
-    """Get the commit hash before the given commit."""
     result = run_cmd(['git', 'rev-parse', f'{commit_hash}^'],
                      cwd=repo_path,
                      capture_output=True)
-    return result.stdout.strip()
+    return result.stdout.strip() # result hash
 
 def process_commits():
-    """Process commits dynamically based on directory structure."""
     global files_gathered 
 
     for project_name in GH_JAVA_PROJECTS.keys():
@@ -120,14 +118,12 @@ def process_commits():
                     target_commit = None
 
                     if stage == 'before':
-                        # Get the commit before 'commit_hash'
                         try:
                             target_commit = get_previous_commit(repo_path, commit_hash)
                         except subprocess.CalledProcessError:
                             log(f"Cannot determine previous commit for {commit_hash}. Probably the first commit.")
                             continue
                     else:
-                        # 'after' => just use the commit itself
                         target_commit = commit_hash
 
                     if not target_commit:
@@ -162,10 +158,9 @@ def process_commits():
 
 
 
-def find_build_xml(repo_path: Path) -> Path | None:
+def find_build_xml(repo_path: Path) -> Optional[Path]:
     """
-    Return a Path object for build.xml if found in either top-level
-    or in the 'build' subdirectory, or None if not found.
+    return a Path object for build.xml if found in either top-level or in the 'build' subdirectory, or None
     """
     possible_paths = [
         repo_path / 'build.xml',
@@ -180,6 +175,7 @@ def find_build_xml(repo_path: Path) -> Path | None:
 
 def compile_project(repo_path, commit_dir) -> bool:
     """
+    This works in a decent amount of cases, but not every case.
     Compile the project using:
       1) Gradle wrapper if available (unless it's an old codehaus version)
       2) System Gradle if build.gradle found
@@ -268,7 +264,7 @@ def compile_project(repo_path, commit_dir) -> bool:
 def copy_all_gradle_compiled_files(repo_path: Path, commit_dir: Path):
     """
     After a Gradle build, .class files may be in submodules under build/classes.
-    We recursively find those and copy them to commit_dir/compiled.
+    recursively find those and copy them to commit_dir/compiled.
     """
     compiled_output_dir = commit_dir / 'compiled'
     if compiled_output_dir.exists():
@@ -284,7 +280,7 @@ def copy_all_gradle_compiled_files(repo_path: Path, commit_dir: Path):
 def copy_all_maven_compiled_files(repo_path: Path, commit_dir: Path):
     """
     After a Maven build (install), .class files may be in submodules under target/classes.
-    We recursively find those and copy them to commit_dir/compiled.
+    recursively find those and copy them to commit_dir/compiled.
     """
     compiled_output_dir = commit_dir / 'compiled'
     if compiled_output_dir.exists():
@@ -300,14 +296,14 @@ def copy_all_maven_compiled_files(repo_path: Path, commit_dir: Path):
 def copy_all_ant_compiled_files(repo_path: Path, commit_dir: Path):
     """
     After an Ant build, the default location for compiled classes
-    is often build/classes (but can vary).
+    is often build/classes (but can vary and this can cause problemos)
     """
     compiled_output_dir = commit_dir / 'compiled'
     if compiled_output_dir.exists():
         shutil.rmtree(compiled_output_dir)
     compiled_output_dir.mkdir(parents=True, exist_ok=True)
 
-    # The default for many Ant scripts is "build/classes"
+    # The default for many Ant scripts is "build/classes" i have found
     ant_build_classes = repo_path / 'build' / 'classes'
     if ant_build_classes.exists():
         copy_directory_contents(ant_build_classes, compiled_output_dir)
@@ -326,9 +322,6 @@ def copy_directory_contents(src_dir: Path, dest_dir: Path):
             shutil.copy2(item, target_file)
 
 def find_src_directory(repo_path):
-    """
-    Attempt to find a plausible 'src' directory if we must fall back to manual.
-    """
     possible_paths = [
         repo_path / 'h2' / 'src',
         repo_path / 'drools-core' / 'src', 
@@ -345,7 +338,7 @@ def compile_java_manually(repo_path, commit_dir):
     """
     Compile the entire project manually by invoking javac on all .java files
     in 'src', then copy ALL .class files to commit_dir/compiled.
-    Often fails if the project depends on external jars (e.g., JUnit).
+    Often fails if the project depends on external jars (e.g., JUnit). :(
     """
     src_dir = find_src_directory(repo_path)
     if not src_dir:
@@ -384,7 +377,9 @@ def compile_java_manually(repo_path, commit_dir):
 
 if __name__ == "__main__":
     try:
+        print("[notif] Cloning repositories...")
         clone_repos()
+        print("[notif] Processing commits...")
         process_commits()
 
         # final summary

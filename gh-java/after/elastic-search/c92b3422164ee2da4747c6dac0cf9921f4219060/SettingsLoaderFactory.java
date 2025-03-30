@@ -20,7 +20,7 @@
 package org.elasticsearch.util.settings.loader;
 
 /**
- * A settings loader factory automatically trying to identify what type of
+ * A strategySettings loader factory automatically trying to identify what type of
  * {@link SettingsLoader} to use.
  *
  * @author kimchy (Shay Banon)
@@ -48,7 +48,7 @@ public final class SettingsLoaderFactory {
     }
 
     /**
-     * Returns a {@link SettingsLoader} based on the actual settings source.
+     * Returns a {@link SettingsLoader} based on the actual strategySettings source.
      */
     public static SettingsLoader loaderFromSource(String source) {
         if (source.indexOf('{') != -1 && source.indexOf('}') != -1) {

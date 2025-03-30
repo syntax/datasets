@@ -26,28 +26,28 @@ import org.elasticsearch.util.settings.Settings;
 /**
  * A server builder is used to construct a {@link Server} instance.
  *
- * <p>Settings will be loaded relative to the ES home (with or without <tt>config/</tt> prefix) and if not found,
- * within the classpath (with or without <tt>config/<tt> prefix). The settings file loaded can either be named
- * <tt>elasticsearch.yml</tt> or <tt>elasticsearch.json</tt>). Loading settings can be disabled by calling
+ * <p>StrategySettings will be loaded relative to the ES home (with or without <tt>config/</tt> prefix) and if not found,
+ * within the classpath (with or without <tt>config/<tt> prefix). The strategySettings file loaded can either be named
+ * <tt>elasticsearch.yml</tt> or <tt>elasticsearch.json</tt>). Loading strategySettings can be disabled by calling
  * {@link #loadConfigSettings(boolean)} with <tt>false<tt>.
  *
- * <p>Explicit settings can be passed by using the {@link #settings(Settings)} method.
+ * <p>Explicit strategySettings can be passed by using the {@link #settings(Settings)} method.
  *
- * <p>In any case, settings will be resolved from system properties as well that are either prefixed with <tt>es.</tt>
+ * <p>In any case, strategySettings will be resolved from system properties as well that are either prefixed with <tt>es.</tt>
  * or <tt>elasticsearch.</tt>.
  *
- * <p>An example for creating a simple server with optional settings loaded from the classpath:
+ * <p>An example for creating a simple server with optional strategySettings loaded from the classpath:
  *
  * <pre>
  * Server server = ServerBuilder.serverBuilder().server();
  * </pre>
  *
- * <p>An example for creating a server with explicit settings (in this case, a node in the cluster that does not hold
+ * <p>An example for creating a server with explicit strategySettings (in this case, a node in the cluster that does not hold
  * data):
  *
  * <pre>
  * Server server = ServerBuilder.serverBuilder()
- *                      .settings(ImmutableSettings.settingsBuilder().putBoolean("node.data", false)
+ *                      .strategySettings(ImmutableSettings.settingsBuilder().putBoolean("node.data", false)
  *                      .server();
  * </pre>
  *
@@ -69,14 +69,14 @@ public class ServerBuilder {
     }
 
     /**
-     * Explicit server settings to set.
+     * Explicit server strategySettings to set.
      */
     public ServerBuilder settings(Settings.Builder settings) {
         return settings(settings.build());
     }
 
     /**
-     * Explicit server settings to set.
+     * Explicit server strategySettings to set.
      */
     public ServerBuilder settings(Settings settings) {
         this.settings = settings;
@@ -84,7 +84,7 @@ public class ServerBuilder {
     }
 
     /**
-     * Should the server builder automatically try and load config settings from the file system / classpath. Defaults
+     * Should the server builder automatically try and load config strategySettings from the file system / classpath. Defaults
      * to <tt>true</tt>.
      */
     public ServerBuilder loadConfigSettings(boolean loadConfigSettings) {

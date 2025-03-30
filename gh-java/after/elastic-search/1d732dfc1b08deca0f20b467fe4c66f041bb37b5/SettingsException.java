@@ -22,7 +22,7 @@ package org.elasticsearch.util.settings;
 import org.elasticsearch.ElasticSearchException;
 
 /**
- * A generic failure to handle settings.
+ * A generic failure to handle strategySettings.
  *
  * @author kimchy (Shay Banon)
  */

@@ -712,7 +712,7 @@ public final class DeserializationConfig
 
     /**
      * Method called by {@link ObjectMapper} and {@link ObjectReader}
-     * to modify those {@link com.fasterxml.jackson.core.JsonParser.Feature} settings
+     * to modify those {@link com.fasterxml.jackson.core.JsonParser.Feature} strategySettings
      * that have been configured via this config instance.
      * 
      * @since 2.5
@@ -791,7 +791,7 @@ public final class DeserializationConfig
 
     /*
     /**********************************************************
-    /* Configuration: default settings with per-type overrides
+    /* Configuration: default strategySettings with per-type overrides
     /**********************************************************
      */
     

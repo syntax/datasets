@@ -197,7 +197,7 @@ public abstract class AbstractLeastSquaresOptimizer
     @Override
     public PointVectorValuePair optimize(OptimizationData... optData)
         throws TooManyEvaluationsException {
-        // Retrieve settings.
+        // Retrieve strategySettings.
         parseOptimizationData(optData);
         // Set up base class and perform computation.
         return super.optimize(optData);

@@ -693,7 +693,7 @@ public class Reporter {
 
     public void spyAndDelegateAreMutuallyExclusive() {
         throw new MockitoException(join(
-                "Settings should not define a spy instance and a delegated instance at the same time."
+                "StrategySettings should not define a spy instance and a delegated instance at the same time."
         )) ;
     }
 

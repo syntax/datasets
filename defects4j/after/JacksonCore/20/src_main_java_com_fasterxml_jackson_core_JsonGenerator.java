@@ -139,7 +139,7 @@ public abstract class JsonGenerator
          * Note that this setting may not necessarily make sense for all
          * data formats (for example, binary formats typically do not use
          * any escaping mechanisms; and some textual formats do not have
-         * general-purpose escaping); if so, settings is simply ignored.
+         * general-purpose escaping); if so, strategySettings is simply ignored.
          * Put another way, effects of this feature are data-format specific.
          *<p>
          * Feature is disabled by default.
@@ -375,7 +375,7 @@ public abstract class JsonGenerator
 
     /**
      * Bulk access method for getting state of all {@link FormatFeature}s, format-specific
-     * on/off configuration settings.
+     * on/off configuration strategySettings.
      * 
      * @return Bit mask that defines current states of all standard {@link FormatFeature}s.
      * 

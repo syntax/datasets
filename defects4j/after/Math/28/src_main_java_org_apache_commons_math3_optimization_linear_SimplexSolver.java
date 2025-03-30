@@ -45,7 +45,7 @@ public class SimplexSolver extends AbstractLinearOptimizer {
     private final int maxUlps;
 
     /**
-     * Build a simplex solver with default settings.
+     * Build a simplex solver with default strategySettings.
      */
     public SimplexSolver() {
         this(DEFAULT_EPSILON, DEFAULT_ULPS);

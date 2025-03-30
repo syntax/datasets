@@ -147,7 +147,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
 
     /**
      * Build an optimizer for least squares problems.
-     * <p>The default values for the algorithm settings are:
+     * <p>The default values for the algorithm strategySettings are:
      *   <ul>
      *    <li>{@link #setConvergenceChecker(VectorialConvergenceChecker) vectorial convergence checker}: null</li>
      *    <li>{@link #setInitialStepBoundFactor(double) initial step bound factor}: 100.0</li>
@@ -161,7 +161,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
      * <p>These default values may be overridden after construction. If the {@link
      * #setConvergenceChecker vectorial convergence checker} is set to a non-null value, it
      * will be used instead of the {@link #setCostRelativeTolerance cost relative tolerance}
-     * and {@link #setParRelativeTolerance parameters relative tolerance} settings.
+     * and {@link #setParRelativeTolerance parameters relative tolerance} strategySettings.
      */
     public LevenbergMarquardtOptimizer() {
 

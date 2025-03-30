@@ -30,7 +30,7 @@ import org.apache.commons.math.FieldElement;
  *  <p>The design goals here are:
  *  <ol>
  *    <li>Decimal math, or close to it</li>
- *    <li>Settable precision (but no mix between numbers using different settings)</li>
+ *    <li>Settable precision (but no mix between numbers using different strategySettings)</li>
  *    <li>Portability.  Code should be keep as portable as possible.</li>
  *    <li>Performance</li>
  *    <li>Accuracy  - Results should always be +/- 1 ULP for basic

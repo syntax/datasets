@@ -692,7 +692,7 @@ public class CommandLineRunner extends
     List<String> processedFileArgs
         = processArgs(argsInFile.toArray(new String[] {}));
     CmdLineParser parserFileArgs = new CmdLineParser(flags);
-    // Command-line warning levels should override flag file settings,
+    // Command-line warning levels should override flag file strategySettings,
     // which means they should go last.
     List<GuardLevel> previous = Lists.newArrayList(Flags.guardLevels);
     Flags.guardLevels.clear();

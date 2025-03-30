@@ -1054,7 +1054,7 @@ public class JdbcPreparedStatement extends JdbcStatement implements PreparedStat
 
 
     /**
-     * Adds the current settings to the batch.
+     * Adds the current strategySettings to the batch.
      */
     public void addBatch() throws SQLException {
         try {

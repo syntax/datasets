@@ -313,7 +313,7 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
     public String html() {
         StringBuilder sb = StringUtil.borrowBuilder();
         try {
-            html(sb, (new Document("")).outputSettings()); // output settings a bit funky, but this html() seldom used
+            html(sb, (new Document("")).outputSettings()); // output strategySettings a bit funky, but this html() seldom used
         } catch (IOException e) { // ought never happen
             throw new SerializationException(e);
         }
@@ -395,7 +395,7 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
     }
 
     /**
-     * Internal method. Removes duplicate attribute by name. Settings for case sensitivity of key names.
+     * Internal method. Removes duplicate attribute by name. StrategySettings for case sensitivity of key names.
      * @param settings case sensitivity
      * @return number of removed dupes
      */

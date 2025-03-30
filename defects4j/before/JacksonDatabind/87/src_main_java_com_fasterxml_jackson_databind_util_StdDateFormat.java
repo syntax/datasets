@@ -258,7 +258,7 @@ public class StdDateFormat
         Boolean newValue = enabled;
         if (_lenient != newValue) {
             _lenient = newValue;
-            // and since leniency settings may have been used:
+            // and since leniency strategySettings may have been used:
             _clearFormats();
         }
     }

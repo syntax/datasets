@@ -137,7 +137,7 @@ public interface Option {
      * Appends usage information to the specified StringBuffer
      *
      * @param buffer the buffer to append to
-     * @param helpSettings a set of display settings @see DisplaySetting
+     * @param helpSettings a set of display strategySettings @see DisplaySetting
      * @param comp a comparator used to sort the Options
      */
     void appendUsage(

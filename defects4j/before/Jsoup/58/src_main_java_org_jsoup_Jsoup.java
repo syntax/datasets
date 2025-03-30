@@ -225,7 +225,7 @@ public class Jsoup {
      * @param bodyHtml input untrusted HTML (body fragment)
      * @param baseUri URL to resolve relative URLs against
      * @param whitelist white-list of permitted HTML elements
-     * @param outputSettings document output settings; use to control pretty-printing and entity escape modes
+     * @param outputSettings document output strategySettings; use to control pretty-printing and entity escape modes
      * @return safe HTML (body fragment)
      * @see Cleaner#clean(Document)
      */

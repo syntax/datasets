@@ -61,7 +61,7 @@ public class MapDeserializer
      */
     protected final TypeDeserializer _valueTypeDeserializer;
     
-    // // Instance construction settings:
+    // // Instance construction strategySettings:
 
     protected final ValueInstantiator _valueInstantiator;
 
@@ -109,7 +109,7 @@ public class MapDeserializer
 
     /**
      * Copy-constructor that can be used by sub-classes to allow
-     * copy-on-write styling copying of settings of an existing instance.
+     * copy-on-write styling copying of strategySettings of an existing instance.
      */
     protected MapDeserializer(MapDeserializer src)
     {
@@ -149,7 +149,7 @@ public class MapDeserializer
 
     /**
      * Fluent factory method used to create a copy with slightly
-     * different settings. When sub-classing, MUST be overridden.
+     * different strategySettings. When sub-classing, MUST be overridden.
      */
     @SuppressWarnings("unchecked")
     protected MapDeserializer withResolved(KeyDeserializer keyDeser,
@@ -289,7 +289,7 @@ public class MapDeserializer
      * IMPORTANT: but, note, that instances CAN NOT BE CACHED if there is
      * a value type deserializer; this caused an issue with 2.4.4 of
      * JAXB Annotations (failing a test).
-     * It is also possible that some other settings could make deserializers
+     * It is also possible that some other strategySettings could make deserializers
      * un-cacheable; but on the other hand, caching can make a big positive
      * difference with performance... so it's a hard choice.
      * 

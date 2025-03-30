@@ -276,9 +276,9 @@ public class SimpleEngineBenchmark {
         ShardId shardId = new ShardId(new Index("index"), 1);
         Settings settings = EMPTY_SETTINGS;
 
-//        Store store = new RamStore(shardId, settings);
+//        Store store = new RamStore(shardId, strategySettings);
         Store store = new MemoryStore(shardId, settings);
-//        Store store = new NioFsStore(shardId, settings);
+//        Store store = new NioFsStore(shardId, strategySettings);
 
         store.deleteContent();
 

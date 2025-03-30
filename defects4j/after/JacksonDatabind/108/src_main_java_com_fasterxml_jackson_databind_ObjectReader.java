@@ -55,7 +55,7 @@ public class ObjectReader
      */
 
     /**
-     * General serialization configuration settings; while immutable,
+     * General serialization configuration strategySettings; while immutable,
      * can use copy-constructor to create modified instances as necessary.
      */
     protected final DeserializationConfig _config;
@@ -136,7 +136,7 @@ public class ObjectReader
      * NOTE: If defined non-null, <code>readValue()</code> methods that take
      * {@link Reader} or {@link String} input <b>will fail with exception</b>,
      * because format-detection only works on byte-sources. Also, if format
-     * cannot be detect reliably (as per detector settings),
+     * cannot be detect reliably (as per detector strategySettings),
      * a {@link JsonParseException} will be thrown).
      * 
      * @since 2.1
@@ -804,7 +804,7 @@ public class ObjectReader
     /**
      * Fluent factory method for constructing a reader that will try to
      * auto-detect underlying data format, using specified list of
-     * {@link JsonFactory} instances, and default {@link DataFormatReaders} settings
+     * {@link JsonFactory} instances, and default {@link DataFormatReaders} strategySettings
      * (for customized {@link DataFormatReaders}, you can construct instance yourself).
      * to construct appropriate {@link JsonParser} for actual parsing.
      *<p>

@@ -22,7 +22,7 @@ package org.elasticsearch.util.settings;
 import com.google.inject.AbstractModule;
 
 /**
- * A module that binds the provided settings to the {@link Settings} interface.
+ * A module that binds the provided strategySettings to the {@link Settings} interface.
  *
  * @author kimchy (Shay Banon)
  */

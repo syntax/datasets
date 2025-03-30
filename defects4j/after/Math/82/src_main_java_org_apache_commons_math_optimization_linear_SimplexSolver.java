@@ -36,7 +36,7 @@ public class SimplexSolver extends AbstractLinearOptimizer {
     protected final double epsilon;  
 
     /**
-     * Build a simplex solver with default settings.
+     * Build a simplex solver with default strategySettings.
      */
     public SimplexSolver() {
         this(DEFAULT_EPSILON);

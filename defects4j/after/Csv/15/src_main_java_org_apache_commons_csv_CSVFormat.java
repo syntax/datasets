@@ -230,7 +230,7 @@ public final class CSVFormat implements Serializable {
      * Standard comma separated format, as for {@link #RFC4180} but allowing empty lines.
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter(',')</li>
@@ -246,7 +246,7 @@ public final class CSVFormat implements Serializable {
 
     /**
      * Excel file format (using a comma as the value delimiter). Note that the actual value delimiter used by Excel is
-     * locale dependent, it might be necessary to customize this format to accommodate to your regional settings.
+     * locale dependent, it might be necessary to customize this format to accommodate to your regional strategySettings.
      *
      * <p>
      * For example for parsing or generating a CSV file on a French system the following format will be used:
@@ -257,7 +257,7 @@ public final class CSVFormat implements Serializable {
      * </pre>
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>{@link #withDelimiter(char) withDelimiter(',')}</li>
@@ -288,7 +288,7 @@ public final class CSVFormat implements Serializable {
      * </p>
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter(',')</li>
@@ -320,7 +320,7 @@ public final class CSVFormat implements Serializable {
      * </p>
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter(',')</li>
@@ -350,7 +350,7 @@ public final class CSVFormat implements Serializable {
      * </p>
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter('\t')</li>
@@ -386,7 +386,7 @@ public final class CSVFormat implements Serializable {
      * </p>
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter(',')</li>
@@ -423,7 +423,7 @@ public final class CSVFormat implements Serializable {
      * </p>
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter('\t')</li>
@@ -455,7 +455,7 @@ public final class CSVFormat implements Serializable {
      * Comma separated format as defined by <a href="http://tools.ietf.org/html/rfc4180">RFC 4180</a>.
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter(',')</li>
@@ -474,7 +474,7 @@ public final class CSVFormat implements Serializable {
      * Tab-delimited format.
      *
      * <p>
-     * Settings are:
+     * StrategySettings are:
      * </p>
      * <ul>
      * <li>withDelimiter('\t')</li>

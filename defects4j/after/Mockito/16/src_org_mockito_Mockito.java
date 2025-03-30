@@ -801,7 +801,7 @@ public class Mockito extends Matchers {
     }
     
     /**
-     * Creates a mock with some non-standard settings.
+     * Creates a mock with some non-standard strategySettings.
      * <p>
      * The number of configuration points for a mock grows 
      * so we need a fluent way to introduce new configuration without adding more and more overloaded Mockito.mock() methods. 
@@ -820,7 +820,7 @@ public class Mockito extends Matchers {
      * See examples in javadoc for {@link Mockito} class
      * 
      * @param classToMock class or interface to mock
-     * @param mockSettings additional mock settings
+     * @param mockSettings additional mock strategySettings
      * @return mock object
      */
     public static <T> T mock(Class<T> classToMock, MockSettings mockSettings) {
@@ -1525,14 +1525,14 @@ public class Mockito extends Matchers {
     }
 
     /**
-     * Allows mock creation with additional mock settings. 
+     * Allows mock creation with additional mock strategySettings.
      * <p>
      * Don't use it too often. 
      * Consider writing simple tests that use simple mocks. 
      * Repeat after me: simple tests push simple, KISSy, readable & maintainable code.
      * If you cannot write a test in a simple way - refactor the code under test.
      * <p>
-     * Examples of mock settings:
+     * Examples of mock strategySettings:
      * <pre>
      *   //Creates mock with different default answer & name
      *   Foo mock = mock(Foo.class, withSettings()
@@ -1546,13 +1546,13 @@ public class Mockito extends Matchers {
      *       .extraInterfaces(Bar.class));    
      * </pre>
      * {@link MockSettings} has been introduced for two reasons. 
-     * Firstly, to make it easy to add another mock settings when the demand comes.
-     * Secondly, to enable combining different mock settings without introducing zillions of overloaded mock() methods.
+     * Firstly, to make it easy to add another mock strategySettings when the demand comes.
+     * Secondly, to enable combining different mock strategySettings without introducing zillions of overloaded mock() methods.
      * <p>
-     * See javadoc for {@link MockSettings} to learn about possible mock settings.
+     * See javadoc for {@link MockSettings} to learn about possible mock strategySettings.
      * <p>
      * 
-     * @return mock settings instance with defaults.
+     * @return mock strategySettings instance with defaults.
      */
     public static MockSettings withSettings() {
         return new MockSettingsImpl().defaultAnswer(RETURNS_DEFAULTS);

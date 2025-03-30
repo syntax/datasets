@@ -114,7 +114,7 @@ public final class SerializationConfig
     
     /**
      * Which Bean/Map properties are to be included in serialization?
-     * Default settings is to include all regardless of value; can be
+     * Default strategySettings is to include all regardless of value; can be
      * changed to only include non-null properties, or properties
      * with non-default values.
      *<p>
@@ -788,7 +788,7 @@ public final class SerializationConfig
 
     /**
      * Method called by {@link ObjectMapper} and {@link ObjectWriter}
-     * to modify those {@link com.fasterxml.jackson.core.JsonGenerator.Feature} settings
+     * to modify those {@link com.fasterxml.jackson.core.JsonGenerator.Feature} strategySettings
      * that have been configured via this config instance.
      * 
      * @since 2.5
@@ -882,7 +882,7 @@ public final class SerializationConfig
 
     /*
     /**********************************************************
-    /* Configuration: default settings with per-type overrides
+    /* Configuration: default strategySettings with per-type overrides
     /**********************************************************
      */
     

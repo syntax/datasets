@@ -154,7 +154,7 @@ public class Attribute implements Map.Entry<String, String>, Cloneable  {
     /**
      * Collapsible if it's a boolean attribute and value is empty or same as name
      * 
-     * @param out output settings
+     * @param out output strategySettings
      * @return  Returns whether collapsible or not
      */
     protected final boolean shouldCollapseAttribute(Document.OutputSettings out) {

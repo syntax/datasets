@@ -43,7 +43,7 @@
  * 06-Apr-2006 : Fixed bug 1190647 - legend and section colors not consistent
  *               when aggregation limit is specified (DG);
  * 27-Sep-2006 : Updated draw() method for deprecated code (DG);
- * 17-Jan-2007 : Updated prefetchSectionPaints() to check settings in
+ * 17-Jan-2007 : Updated prefetchSectionPaints() to check strategySettings in
  *               underlying PiePlot (DG);
  * 17-May-2007 : Added argument check to setPieChart() (DG);
  * 18-May-2007 : Set dataset for LegendItem (DG);

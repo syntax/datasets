@@ -75,7 +75,7 @@
  * 28-Oct-2002 : Changes to the CategoryDataset interface (DG);
  * 05-Nov-2002 : Base dataset is now TableDataset not CategoryDataset (DG);
  * 07-Nov-2002 : Renamed labelXXX as valueLabelXXX (DG);
- * 18-Nov-2002 : Added grid settings for both domain and range axis (previously
+ * 18-Nov-2002 : Added grid strategySettings for both domain and range axis (previously
  *               these were set in the axes) (DG);
  * 19-Nov-2002 : Added axis location parameters to constructor (DG);
  * 17-Jan-2003 : Moved to com.jrefinery.chart.plot package (DG);

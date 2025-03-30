@@ -5,11 +5,11 @@ import org.jsoup.nodes.Attributes;
 import static org.jsoup.internal.Normalizer.lowerCase;
 
 /**
- * Controls parser settings, to optionally preserve tag and/or attribute name case.
+ * Controls parser strategySettings, to optionally preserve tag and/or attribute name case.
  */
 public class ParseSettings {
     /**
-     * HTML default settings: both tag and attribute names are lower-cased during parsing.
+     * HTML default strategySettings: both tag and attribute names are lower-cased during parsing.
      */
     public static final ParseSettings htmlDefault;
     /**
@@ -40,7 +40,7 @@ public class ParseSettings {
     }
 
     /**
-     * Define parse settings.
+     * Define parse strategySettings.
      * @param tag preserve tag case?
      * @param attribute preserve attribute name case?
      */

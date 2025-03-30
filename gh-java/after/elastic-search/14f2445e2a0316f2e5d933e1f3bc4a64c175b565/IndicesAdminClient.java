@@ -73,7 +73,7 @@ public interface IndicesAdminClient {
     void execStatus(IndicesStatusRequest request, ActionListener<IndicesStatusResponse> listener);
 
     /**
-     * Creates an index using an explicit request allowing to specify the settings of the index.
+     * Creates an index using an explicit request allowing to specify the strategySettings of the index.
      *
      * @param request The create index request
      * @return The result future
@@ -82,7 +82,7 @@ public interface IndicesAdminClient {
     ActionFuture<CreateIndexResponse> create(CreateIndexRequest request);
 
     /**
-     * Creates an index using an explicit request allowing to specify the settings of the index.
+     * Creates an index using an explicit request allowing to specify the strategySettings of the index.
      *
      * @param request  The create index request
      * @param listener A listener to be notified with a result
@@ -92,7 +92,7 @@ public interface IndicesAdminClient {
     ActionFuture<CreateIndexResponse> create(CreateIndexRequest request, ActionListener<CreateIndexResponse> listener);
 
     /**
-     * Creates an index using an explicit request allowing to specify the settings of the index.
+     * Creates an index using an explicit request allowing to specify the strategySettings of the index.
      *
      * @param request  The create index request
      * @param listener A listener to be notified with a result
